@@ -1,0 +1,55 @@
+{
+  "ip": "*****************",
+  "type": "IPv4",
+  "company": { "domain": "*******", "name": "*******", "type": "isp" },
+  "connection": {
+    "asn": 1,
+    "domain": "*******",
+    "organization": "************",
+    "route": "********",
+    "type": "isp"
+  },
+  "location": {
+    "continent": { "code": "SA", "name": "South America" },
+    "country": {
+      "area": 8511965,
+      "borders": ["AR", "BO", "CO", "GF", "GY", "PE", "PY", "SR", "UY", "VE"],
+      "calling_code": "55",
+      "capital": "Brasília",
+      "code": "BR",
+      "name": "Brazil",
+      "population": 213993441,
+      "population_density": 25.14,
+      "flag": {
+        "emoji": "🇧🇷",
+        "emoji_unicode": "U+1F1E7 U+1F1F7",
+        "emojitwo": "https://cdn.ipregistry.co/flags/emojitwo/br.svg",
+        "noto": "https://cdn.ipregistry.co/flags/noto/br.png",
+        "twemoji": "https://cdn.ipregistry.co/flags/twemoji/br.svg",
+        "wikimedia": "https://cdn.ipregistry.co/flags/wikimedia/br.svg"
+      },
+      "languages": [
+        { "code": "pt", "name": "Portuguese", "native": "português" },
+        { "code": "es", "name": "Spanish", "native": "español" },
+        { "code": "en", "name": "English", "native": "English" },
+        { "code": "fr", "name": "French", "native": "français" }
+      ],
+      "tld": ".br"
+    },
+    "region": { "code": "BR-SP", "name": "São Paulo" },
+    "city": "São Paulo",
+    "postal": "01000",
+    "latitude": 1,
+    "longitude": 1,
+    "language": { "code": "pt", "name": "Portuguese", "native": "português" },
+    "in_eu": false
+  },
+  "time_zone": {
+    "id": "America/Sao_Paulo",
+    "abbreviation": "BRT",
+    "current_time": "2022-11-04T16:55:58-03:00",
+    "name": "Brasilia Standard Time",
+    "offset": -10800,
+    "in_daylight_saving": false
+  }
+}

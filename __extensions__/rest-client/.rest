@@ -1,0 +1,37 @@
+### ALL
+GET http://localhost:3333/abbreviations HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+### GET BY ID
+GET http://localhost:3333/abbreviations/ca20b84c-ee3f-4488-a7e6-49a8429848d9 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+### COUNT ANALYTICS BY ABBREVIATION
+GET http://localhost:3333/abbreviations/ca20b84c-ee3f-4488-a7e6-49a8429848d9/analytics HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+### REDIRECT
+GET http://localhost:3333/r/K5nGs4hP HTTP/1.1
+Accept: application/json,text/html
+
+
+### CREATE
+POST http://localhost:3333/abbreviations HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "original_url": "https://www.google.com/?q=Node.js"
+}
+
+### DEFINITIONS
+PATCH  http://localhost:3333/abbreviations/8db6d738-3ec3-4cc8-93d9-76db3c7a8f8f HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "tracking": false
+}
