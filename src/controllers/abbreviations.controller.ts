@@ -156,6 +156,59 @@ const handleDownloader: HandleDownloader = (hash, data) => {
   return _callback;
 };
 
+const replacerFilename = (str: string): string => {
+  const EMPTY_STRING = '';
+  const DASH = '-';
+
+  const WHITE_SPACE_CHAR_CODE = 32;
+  const REPLACER_REGEXP = /[\.|\,|\s]/gi;
+
+  const _replacer = (_: string, index: number, str: string): string => {
+    const hasCharInLastPosition = str.length - 1 === index;
+
+    const hasCharInPrimaryPosition = index === 0;
+
+    const isNotEmpty = str.charCodeAt(index) !== WHITE_SPACE_CHAR_CODE;
+
+    return hasCharInLastPosition
+      ? EMPTY_STRING
+      : hasCharInPrimaryPosition && isNotEmpty
+      ? EMPTY_STRING
+      : DASH;
+  };
+
+  return str.replace(REPLACER_REGEXP, (char: string, i: number, str: string) =>
+    _replacer(char, i, str)
+  );
+};
+
+const filenameFix = (filename: string, suffix: string = 'csv'): string => {
+  const filenameWithoutTrashs = replacerFilename(filename);
+
+  return `${filenameWithoutTrashs}.${suffix}`;
+};
+
+const extFilename = (
+  filename: string,
+  size: number = 3,
+  ext: string = 'csv'
+) => {
+  let filenameWithExt = filename; /** scoped */
+
+  const positions = filenameWithExt.length - 1;
+
+  if (positions <= 0) {
+    filenameWithExt = Date.now().toString();
+  }
+
+  // Extension size without dots ".txt" - "txt"
+  const extentionIndex = positions - size;
+
+  const hasExtension = filenameWithExt.includes(`.${ext}`, extentionIndex);
+
+  return hasExtension ? filenameWithExt : filenameFix(filenameWithExt, ext);
+};
+
 /**
  * @class AbbreviationController
  */
@@ -178,7 +231,7 @@ class AbbreviationController {
     try {
       const { hash } = request.params as { hash: string };
 
-      const query = request.query as { format?: string };
+      const query = request.query as { format?: string; download?: string };
 
       const { ip_address } = trackingIP(request);
 
@@ -246,11 +299,16 @@ class AbbreviationController {
             updated_at,
           });
 
-          //console.log(data);
+          const filename = query?.download || data.filename;
 
+          //console.log(data);
           await AnalyticsQueueAdd({ abbreviation_id, ip_address, tracking });
 
-          return response.download(data.path, handleDownloader(hash, data));
+          return response.download(
+            data.path,
+            extFilename(filename),
+            handleDownloader(hash, data)
+          );
         }
 
         /** RAW */
