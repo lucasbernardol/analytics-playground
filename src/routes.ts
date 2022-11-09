@@ -18,6 +18,7 @@ const adapt = (method: Function) => {
 
 /** Redirectings */
 routes.get('/r/:hash', adapt(controller.redirecting));
+routes.get('/r/:hash/attach', adapt(controller.formats));
 
 routes.get('/abbreviations', adapt(controller.all));
 routes.get('/abbreviations/:id', adapt(controller.findById));

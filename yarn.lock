@@ -503,6 +503,11 @@ cross-argv@^2.0.0:
   resolved "https://registry.yarnpkg.com/cross-argv/-/cross-argv-2.0.0.tgz#2e7907ba3246f82c967623a3e8525925bbd6c0ad"
   integrity sha512-YIaY9TR5Nxeb8SMdtrU8asWVM4jqJDNDYlKV21LxtYcfNJhp1kEsgSa6qXwXgzN0WQWGODps0+TlGp2xQSHwOg==
 
+csv-stringify@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/csv-stringify/-/csv-stringify-6.2.0.tgz#f89881e8f61293bf5af11f421266b5da7b744030"
+  integrity sha512-dcUbQLRTTDcgQxgEU8V9IctkaCwHZjZfzUZ5ZB3RY8Y+pXtdtl5iVQHfGzANytFFkRKanYzBXrkfpNdGR7eviA==
+
 debug@2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -748,6 +753,11 @@ hdr-histogram-percentiles-obj@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/hdr-histogram-percentiles-obj/-/hdr-histogram-percentiles-obj-3.0.0.tgz#9409f4de0c2dda78e61de2d9d78b1e9f3cba283c"
   integrity sha512-7kIufnBqdsBGcSZLPJwqHT3yhk1QTsSlFsVD3kx5ixH/AlgBs9yM1q6DPhXZ8f8gtdqgh7N7/5btRLpQsS2gHw==
+
+helmet@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/helmet/-/helmet-6.0.0.tgz#8e183820ddccd7729a206ad73c577b264f495595"
+  integrity sha512-FO9RpR1wNJepH/GbLPQVtkE2eESglXL641p7SdyoT4LngHFJcZheHMoyUcjCZF4qpuMMO1u5q6RK0l9Ux8JBcg==
 
 http-errors@2.0.0:
   version "2.0.0"

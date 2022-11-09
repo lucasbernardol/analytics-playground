@@ -17,6 +17,10 @@ Accept: application/json
 GET http://localhost:3333/r/K5nGs4hP HTTP/1.1
 Accept: application/json,text/html
 
+### REDIRECT WITH FORMATS
+GET http://localhost:3333/r/K5nGs4hP/attach/?format=csv HTTP/1.1
+Accept: application/json,text/html,text/plain
+
 
 ### CREATE
 POST http://localhost:3333/abbreviations HTTP/1.1

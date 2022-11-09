@@ -5,5 +5,8 @@ schema.sqlite
 *.sqlite
 *.db
 
+tmp/documents/*
+!tmp/documents/.gitkeep
+
 # Keep environment variables out of version control
 .env

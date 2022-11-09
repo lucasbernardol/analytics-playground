@@ -40,6 +40,9 @@ class AnalyticsTask {
       // @FIXME: fix IpV4 in production
       const registry = await lookup(process.env.IP as string);
 
+      // Ideia
+      ///const anlyticType = await prisma.analyticType.findUnique({  })
+
       /**
        * - Check ip address
        */
@@ -74,6 +77,7 @@ class AnalyticsTask {
       const analytic = await prisma.analytic.create({
         data: {
           ip_address_id,
+          // analutic_type_id: anlyticType.id
           hostname: registry.hostname,
           company: registry.company as any,
           connection: registry.connection as any,
